@@ -1,11 +1,10 @@
 :root{
-  /* Tema Lavanda & Blanco */
-  --bg: #f7f4ff;        /* Fondo general */
-  --card: #ffffff;       /* Tarjetas */
-  --text: #3c3c3c;       /* Texto principal */
-  --accent: #a88bff;     /* Botón principal (lavanda) */
-  --accent-2: #d4a643;   /* Dorado de acento */
-  --muted: #6b6b6b;      /* Texto secundario */
+  --bg: #f7f4ff;
+  --card: #ffffff;
+  --text: #3c3c3c;
+  --accent: #a88bff;
+  --accent-2: #d4a643;
+  --muted: #6b6b6b;
 
   --ok:#10b981;
   --danger:#ef4444;
@@ -18,32 +17,134 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 h1,h2,h3{margin:0 0 12px}
 h1{font-size:clamp(28px,4vw,42px);line-height:1.1}
 p{color:var(--text);opacity:.95}
-.badge{display:inline-block;padding:6px 10px;border-radius:9999px;background:#f1ecff;color:#6a5e90;font-size:12px;border:1px solid #e6e0ff}
-.price{display:flex;align-items:baseline;gap:12px;margin:16px 0 0}
-.price .old{color:var(--muted);text-decoration:line-through}
-.price .new{font-weight:800;font-size:clamp(28px,4vw,40px);color:var(--accent-2)}
-.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid transparent;background:var(--accent);color:white;text-decoration:none;font-weight:700;cursor:pointer;transition:.2s}
-.btn:hover{filter:brightness(1.05)}
-.btn.secondary{
-  background:#d6ccff !important;     /* Lavanda claro */
-  border-color:#cfc2ff !important;
-  color:#3c3c3c !important;
+
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:9999px;
+  background:#f1ecff;
+  color:#6a5e90;
+  font-size:12px;
+  border:1px solid #e6e0ff;
 }
-.btn.secondary:hover{background:#cfc2ff !important;filter:brightness(1.03)}
+
+.price{
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  margin:16px 0;
+}
+
+.price .old{
+  color:#a78b9f;
+  text-decoration:line-through;
+  font-size:20px;
+  font-weight:600;
+}
+
+.price .new{
+  font-weight:800;
+  font-size:32px;
+  color:var(--accent-2);
+}
+
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  padding:14px 18px;
+  border-radius:14px;
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:white !important;
+  text-decoration:none;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.btn:hover{filter:brightness(1.08)}
+
+.btn.secondary{
+  background:#b79aff !important;
+  border-color:#b79aff !important;
+  color:#ffffff !important;
+}
+.btn.secondary:hover{filter:brightness(1.12)}
+
 .btn.ok{background:var(--ok)}
-.btn.danger{background:var(--danger)}
-.row{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:720px){.row{grid-template-columns:1.2fr .8fr}}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+}
+@media(min-width:720px){
+  .row{grid-template-columns:1.2fr .8fr}
+}
+
 .copy-row{display:flex;align-items:center;gap:8px;margin:8px 0}
-.copy-row code{background:#fbfaff;border:1px solid #e9e5ff;padding:8px 12px;border-radius:10px;display:inline-block;overflow:auto}
-.copy{padding:8px 10px;border:1px solid #e9e5ff;background:#fbfaff;border-radius:10px;color:var(--text);cursor:pointer}
-.hr{height:1px;background:#e6e0ff;margin:18px 0 12px}
-.notice{background:#f7f4ff;border:1px dashed #e6e0ff;color:#4a4460;padding:12px 14px;border-radius:14px}
-.footer{opacity:.7;text-align:center;font-size:13px;margin-top:28px}
+.copy-row code{
+  background:#fbfaff;
+  border:1px solid #e9e5ff;
+  padding:8px 12px;
+  border-radius:10px;
+}
+.copy{
+  padding:8px 10px;
+  border:1px solid #e9e5ff;
+  background:#fbfaff;
+  border-radius:10px;
+  color:var(--text);
+  cursor:pointer;
+}
+
+.hr{height:1px;background:#e6e0ff;margin:18px 0}
+
+.notice{
+  background:#f7f4ff;
+  border:1px dashed #e6e0ff;
+  color:#4a4460;
+  padding:12px 14px;
+  border-radius:14px;
+}
+
+.footer{
+  opacity:.7;
+  text-align:center;
+  font-size:13px;
+  margin-top:28px;
+}
+
 .hidden{display:none}
 .center{text-align:center}
-ol{padding-left:18px}
 
-/* Banner adaptable */
-.header-banner{width:100%;overflow:hidden;margin:12px 0 20px;border-radius:16px}
-.banner-img{width:100%;height:auto;display:block}
+/* Banner */
+.header-banner{
+  width:100%;
+  overflow:hidden;
+  margin:12px 0 20px;
+  border-radius:16px;
+}
+.banner-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* ¡CUPOS LIMITADOS! */
+.badge.alert{
+  background:#ffe8a3;
+  border:1px solid #f3d26b;
+  color:#6b4e00;
+  font-weight:800;
+  letter-spacing:.5px;
+  box-shadow:0 6px 18px rgba(212,166,67,.18);
+  animation:pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  0%,100%{ transform:scale(1);}
+  50%{ transform:scale(1.03);}
+}
