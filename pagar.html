@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Datos para transferir | Sesión grupal</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Datos bancarios para realizar la transferencia.">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <a class="btn secondary" href="index.html">← Volver</a>
+      <h1>Transferencia bancaria</h1>
+      <p>Realizá la transferencia por <strong>$ 12.000</strong> y luego enviá el comprobante a Clara por WhatsApp.</p>
+
+      <div class="hr"></div>
+      <h3>Datos de la cuenta</h3>
+      <div class="copy-row">
+        <strong>CVU:</strong>
+        <code id="cbu">0000184305010019897073</code>
+        <button class="copy" data-target="cbu">Copiar</button>
+      </div>
+      <div class="copy-row">
+        <strong>Alias:</strong>
+        <code id="alias">sanacion11.11</code>
+        <button class="copy" data-target="alias">Copiar</button>
+      </div>
+      <div class="copy-row">
+        <strong>Titular:</strong>
+        <code id="titular">Facundo R. Urribarri</code>
+        <button class="copy" data-target="titular">Copiar</button>
+      </div>
+
+      <div class="hr"></div>
+      <div class="row">
+        <a id="btn-wa" class="btn" target="_blank" rel="noopener" href="https://wa.me/5492235931151?text=Hola%20Clara%2C%20te%20env%C3%ADo%20el%20comprobante%20de%20la%20sesi%C3%B3n%20grupal.%20Importe%3A%20%2412.000.%20Gracias%F0%9F%92%AB">Enviar comprobante a Clara</a>
+        <button id="btn-done" class="btn ok">Ya hice la transferencia</button>
+      </div>
+
+      <p id="next-cta" class="notice hidden" role="status">
+        ¡Gracias! Ya podés avanzar a la siguiente etapa.
+        <br>
+        <a class="btn" href="acceso.html">Ir a la página de acceso</a>
+      </p>
+
+      <p class="footer">Si tenés dudas, escribinos por WhatsApp.</p>
+    </div>
+  </div>
+
+  <script>
+    // Copiar al portapapeles
+    document.querySelectorAll('.copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-target');
+        const el = document.getElementById(id);
+        const text = el.textContent.trim();
+        navigator.clipboard.writeText(text).then(()=>{
+          btn.textContent = 'Copiado ✔';
+          setTimeout(()=>btn.textContent='Copiar',1200);
+        });
+      });
+    });
+
+    // Marcar pago localmente (usabilidad simple en sitio estático)
+    document.getElementById('btn-done').addEventListener('click', () => {
+      try{
+        localStorage.setItem('sesion_grupal_pagado','1');
+        document.getElementById('next-cta').classList.remove('hidden');
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }catch(e){}
+    });
+  </script>
+</body>
+</html>

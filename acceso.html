@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Acceso posterior al pago | Sesión grupal</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Formulario y materiales para quienes ya realizaron el pago.">
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="gate">
+      <a class="btn secondary" href="index.html">← Inicio</a>
+      <h1>Acceso habilitado</h1>
+      <p>Si ya realizaste el pago, completá la <strong>Ficha de Hogares</strong> y leé las <strong>Instrucciones</strong>.</p>
+
+      <div id="locked" class="notice hidden">
+        Aún no detectamos el pago desde este dispositivo. Volvé a <a href="pagar.html">la página de pago</a> y tocá <strong>“Ya hice la transferencia”</strong> o pedí el enlace directo a la coordinación.
+      </div>
+
+      <div id="links" class="hidden">
+        <div class="row">
+          <a class="btn" id="form-link" href="ficha.html">Completar FICHA HOGARES</a>
+          <a class="btn" id="inst-link" href="instrucciones.html">Ver INSTRUCCIONES</a>
+        </div>
+        <p class="footer">Gracias por sumarte. ✨</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Gate simple por localStorage
+    let ok = false;
+    try {
+      ok = localStorage.getItem('sesion_grupal_pagado') === '1';
+    } catch(e){ ok = false; }
+    if(ok){
+      document.getElementById('links').classList.remove('hidden');
+    }else{
+      document.getElementById('locked').classList.remove('hidden');
+    }
+
+    // Permitir override por clave en query (?clave=OK)
+    const params = new URLSearchParams(location.search);
+    if(params.get('clave') === 'OK'){
+      document.getElementById('locked').classList.add('hidden');
+      document.getElementById('links').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
