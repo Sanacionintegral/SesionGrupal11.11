@@ -35,3 +35,23 @@ p{color:var(--text);opacity:.9}
 .hidden{display:none}
 .center{text-align:center}
 ol{padding-left:18px}
+/* === Tema Lavanda & Blanco === */
+:root{
+  --bg: #f7f4ff;        /* Fondo general */
+  --card: #ffffff;       /* Tarjetas */
+  --text: #3c3c3c;       /* Texto principal */
+  --accent: #a88bff;     /* Botón principal (lavanda) */
+  --accent-2: #d4a643;   /* Dorado de acento */
+  --muted: #6b6b6b;      /* Texto secundario */
+  /* Estos dos ya estaban, los dejo iguales */
+  --ok:#10b981;
+  --danger:#ef4444;
+}
+
+/* Suavizo bordes/oscuros sin reescribir todo */
+.card{ border-color:#e6e0ff; box-shadow:0 10px 30px rgba(168,139,255,.15); }
+.copy-row code, .copy{ border-color:#e9e5ff; background:#fbfaff; }
+.badge{ background:#f1ecff; border-color:#e6e0ff; color:#6a5e90; }
+.notice{ background:#f7f4ff; border-color:#e6e0ff; color:#4a4460; }
+
+
