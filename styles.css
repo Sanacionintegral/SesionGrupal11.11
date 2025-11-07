@@ -148,3 +148,30 @@ p{color:var(--text);opacity:.95}
   0%,100%{ transform:scale(1);}
   50%{ transform:scale(1.03);}
 }
+/* Montaje / bloque destacado */
+.promo{
+  background:#f9f7ff;
+  border:1px solid #e6e0ff;
+  border-radius:16px;
+  padding:16px 18px;
+  box-shadow:0 8px 22px rgba(168,139,255,.12);
+  margin-top:20px;
+}
+.promo h2,.promo h3{margin-top:0}
+.promo ul{margin:10px 0 0 0; padding-left:18px}
+.promo li{margin:6px 0}
+
+/* Chips de info rápida */
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 6px}
+.chip{
+  background:#efe8ff;
+  color:#53438f;
+  border:1px solid #e0d6ff;
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* Ajuste visual de lista dentro de cards centradas */
+.center .promo{ text-align:left }
