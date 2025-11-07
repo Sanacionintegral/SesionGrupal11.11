@@ -1,57 +1,49 @@
 :root{
-  --bg:#0f0f12;
-  --card:#18181c;
-  --accent:#8b5cf6;
-  --accent-2:#f59e0b;
-  --text:#f3f4f6;
-  --muted:#9ca3af;
-  --ok:#10b981;
-  --danger:#ef4444;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-.container{max-width:960px;margin:0 auto;padding:24px}
-.card{background:var(--card);border:1px solid #2a2a31;border-radius:20px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-h1,h2,h3{margin:0 0 12px}
-h1{font-size:clamp(28px,4vw,42px);line-height:1.1}
-p{color:var(--text);opacity:.9}
-.badge{display:inline-block;padding:6px 10px;border-radius:9999px;background:#22232a;color:var(--muted);font-size:12px;border:1px solid #2e2f37}
-.price{display:flex;align-items:baseline;gap:12px;margin:16px 0 0}
-.price .old{color:var(--muted);text-decoration:line-through}
-.price .new{font-weight:800;font-size:clamp(28px,4vw,40px);color:var(--accent-2)}
-.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid transparent;background:var(--accent);color:white;text-decoration:none;font-weight:700;cursor:pointer;transition:.2s}
-.btn:hover{filter:brightness(1.05)}
-.btn.secondary{background:#23232b;border-color:#333542;color:var(--text);font-weight:600}
-.btn.ok{background:var(--ok)}
-.btn.danger{background:var(--danger)}
-.row{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:720px){.row{grid-template-columns:1.2fr .8fr}}
-.copy-row{display:flex;align-items:center;gap:8px;margin:8px 0}
-.copy-row code{background:#22232a;border:1px solid #333542;padding:8px 12px;border-radius:10px;display:inline-block;overflow:auto}
-.copy{padding:8px 10px;border:1px solid #333542;background:#23232b;border-radius:10px;color:var(--text);cursor:pointer}
-.hr{height:1px;background:#2f3037;margin:18px 0 12px}
-.notice{background:#1b1b21;border:1px dashed #3a3a45;color:#d1d5db;padding:12px 14px;border-radius:14px}
-.footer{opacity:.6;text-align:center;font-size:13px;margin-top:28px}
-.hidden{display:none}
-.center{text-align:center}
-ol{padding-left:18px}
-/* === Tema Lavanda & Blanco === */
-:root{
+  /* Tema Lavanda & Blanco */
   --bg: #f7f4ff;        /* Fondo general */
   --card: #ffffff;       /* Tarjetas */
   --text: #3c3c3c;       /* Texto principal */
   --accent: #a88bff;     /* Botón principal (lavanda) */
   --accent-2: #d4a643;   /* Dorado de acento */
   --muted: #6b6b6b;      /* Texto secundario */
-  /* Estos dos ya estaban, los dejo iguales */
+
   --ok:#10b981;
   --danger:#ef4444;
 }
 
-/* Suavizo bordes/oscuros sin reescribir todo */
-.card{ border-color:#e6e0ff; box-shadow:0 10px 30px rgba(168,139,255,.15); }
-.copy-row code, .copy{ border-color:#e9e5ff; background:#fbfaff; }
-.badge{ background:#f1ecff; border-color:#e6e0ff; color:#6a5e90; }
-.notice{ background:#f7f4ff; border-color:#e6e0ff; color:#4a4460; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+.container{max-width:960px;margin:0 auto;padding:24px}
+.card{background:var(--card);border:1px solid #e6e0ff;border-radius:20px;padding:24px;box-shadow:0 10px 30px rgba(168,139,255,.15)}
+h1,h2,h3{margin:0 0 12px}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.1}
+p{color:var(--text);opacity:.95}
+.badge{display:inline-block;padding:6px 10px;border-radius:9999px;background:#f1ecff;color:#6a5e90;font-size:12px;border:1px solid #e6e0ff}
+.price{display:flex;align-items:baseline;gap:12px;margin:16px 0 0}
+.price .old{color:var(--muted);text-decoration:line-through}
+.price .new{font-weight:800;font-size:clamp(28px,4vw,40px);color:var(--accent-2)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid transparent;background:var(--accent);color:white;text-decoration:none;font-weight:700;cursor:pointer;transition:.2s}
+.btn:hover{filter:brightness(1.05)}
+.btn.secondary{
+  background:#d6ccff !important;     /* Lavanda claro */
+  border-color:#cfc2ff !important;
+  color:#3c3c3c !important;
+}
+.btn.secondary:hover{background:#cfc2ff !important;filter:brightness(1.03)}
+.btn.ok{background:var(--ok)}
+.btn.danger{background:var(--danger)}
+.row{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:720px){.row{grid-template-columns:1.2fr .8fr}}
+.copy-row{display:flex;align-items:center;gap:8px;margin:8px 0}
+.copy-row code{background:#fbfaff;border:1px solid #e9e5ff;padding:8px 12px;border-radius:10px;display:inline-block;overflow:auto}
+.copy{padding:8px 10px;border:1px solid #e9e5ff;background:#fbfaff;border-radius:10px;color:var(--text);cursor:pointer}
+.hr{height:1px;background:#e6e0ff;margin:18px 0 12px}
+.notice{background:#f7f4ff;border:1px dashed #e6e0ff;color:#4a4460;padding:12px 14px;border-radius:14px}
+.footer{opacity:.7;text-align:center;font-size:13px;margin-top:28px}
+.hidden{display:none}
+.center{text-align:center}
+ol{padding-left:18px}
 
-
+/* Banner adaptable */
+.header-banner{width:100%;overflow:hidden;margin:12px 0 20px;border-radius:16px}
+.banner-img{width:100%;height:auto;display:block}
